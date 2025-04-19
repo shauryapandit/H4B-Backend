@@ -32,3 +32,7 @@ A powerful and intelligent Discord bot that verifies user-provided statements us
 ```bash
 git clone https://github.com/shauryapandit/Hack4Bengal-4.0.git
 cd backend
+
+```
+## Usage
+!check <your_statement>
