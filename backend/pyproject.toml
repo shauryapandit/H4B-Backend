@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "discord>=2.3.2",
+    "fastapi>=0.115.12",
     "google-genai>=1.11.0",
     "google-generativeai>=0.8.5",
     "python-dotenv>=1.1.0",
+    "uvicorn>=0.34.2",
 ]
