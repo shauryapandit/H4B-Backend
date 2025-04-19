@@ -30,5 +30,5 @@ A powerful and intelligent Discord bot that verifies user-provided statements us
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/your-username/factcheck-discord-bot.git
-cd factcheck-discord-bot
+git clone https://github.com/shauryapandit/Hack4Bengal-4.0.git
+cd backend
