@@ -1,0 +1,12 @@
+modules = ["python-3.11", "python-3.13"]
+run = "uv run backend/main.py"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "uv run main.py"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
