@@ -44,7 +44,7 @@ async def on_ready():
 
 @bot.command(name='check', help='Fact-checks a statement using Gemini + Google Search.')
 async def check_fact(ctx, *, statement: str):
-    thinking_msg = await ctx.reply(f"⏳ Checking the statement: \"{statement[:100]}...\"")
+    thinking_msg = await ctx.reply(f" Checking the statement: \"{statement[:100]}...\"")
 
     prompt_text = f"""
     Please act as a fact-checker. Evaluate the factual accuracy of the following statement, using Google Search if needed.
@@ -80,11 +80,11 @@ async def check_fact(ctx, *, statement: str):
                 reply_content = reply_content[:1990] + "... (truncated)"
             await thinking_msg.edit(content=reply_content)
         else:
-            await thinking_msg.edit(content="⚠️ I couldn't generate a response. Try again.")
+            await thinking_msg.edit(content="I couldn't generate a response. Try again.")
 
     except Exception as e:
         logger.error("Error in Gemini response:", exc_info=True)
-        await thinking_msg.edit(content=f"⚠️ Something went wrong: {str(e)[:300]}")
+        await thinking_msg.edit(content=f"Something went wrong: {str(e)[:300]}")
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -99,15 +99,15 @@ async def on_command_error(ctx, error):
         logger.error(f"Command invoke error: {original}", exc_info=True)
 
         if isinstance(original, discord.HTTPException):
-            await ctx.reply("⚠️ Discord API error. Please try again.")
+            await ctx.reply(" Discord API error. Please try again.")
         elif isinstance(original, asyncio.TimeoutError):
-            await ctx.reply("⏱️ Operation timed out. Please try again.")
+            await ctx.reply(" Operation timed out. Please try again.")
         else:
-            await ctx.reply(f"⚠️ An error occurred: {str(original)}")
+            await ctx.reply(f" An error occurred: {str(original)}")
 
     else:
         logger.error(f"Unexpected error: {error}", exc_info=True)
-        await ctx.reply("❌ Unexpected error occurred. Please try again later.")
+        await ctx.reply(" Unexpected error occurred. Please try again later.")
 
 # --- Run Bot ---
 if __name__ == "__main__":
