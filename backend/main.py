@@ -159,6 +159,10 @@ app = FastAPI()
 class FactCheckRequest(BaseModel):
     statement: str
 
+@app.get("/")
+async def root():
+    return {"Status": "Active"}
+
 @app.post("/check/")
 async def check_fact(request: FactCheckRequest):
     statement = request.statement
