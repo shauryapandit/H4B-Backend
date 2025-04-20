@@ -25,14 +25,34 @@ A powerful and intelligent Discord bot that verifies user-provided statements us
 
 ---
 
-##  Installation
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo.git
+   cd your-repo
+   ```
+2. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Set up environment variables in a `.env` file:
+   ```env
+    GEMINI_API_KEY=your_gemini_api_key
+    DISCORD_BOT_TOKEN=your_discord_bot_token
 
-1. **Clone the repository**:
-
-```bash
-git clone https://github.com/shauryapandit/Hack4Bengal-4.0.git
-cd backend
-
-```
+   ```
+5. Use this given below url to add bot to the server:
+   ```
+   https://discord.com/oauth2/authorize?client_id=1362787732442579004&permissions=1689934340025408&integration_type=0&scope=bot
+   ```
+5. Run the application:
+   ```bash
+   uv run main.py
+   ```
 ## Usage
 !check <your_statement>

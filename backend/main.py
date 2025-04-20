@@ -47,11 +47,15 @@ async def check_fact(ctx, *, statement: str):
     thinking_msg = await ctx.reply(f" Checking the statement: \"{statement[:100]}...\"")
 
     prompt_text = f"""
-    Please act as a fact-checker. Evaluate the factual accuracy of the following statement, using Google Search if needed.
+    You are a fact-checker. Your task is to evaluate the factual accuracy of the following statement.
+    Use Google Search to verify the information.
 
     Statement: "{statement}"
 
-    Give a short, clear evaluation (e.g. Accurate, Inaccurate, Misleading, Unverifiable) with a concise reason.
+    Provide a concise evaluation of the statement's accuracy (e.g., Accurate, Inaccurate, Misleading, Unverifiable)
+    and a brief explanation supporting your evaluation.
+
+    Strictly adhere to a maximum response length of 1900 characters, including the evaluation and explanation.
     """
 
     try:
@@ -92,7 +96,7 @@ async def on_command_error(ctx, error):
         return  # Silently ignore unknown commands
 
     elif isinstance(error, commands.MissingRequiredArgument):
-        await ctx.reply("❗ Missing argument. Usage: `!check <statement>`")
+        await ctx.reply(" Missing argument. Usage: `!check <statement>`")
 
     elif isinstance(error, commands.CommandInvokeError):
         original = error.original
