@@ -50,7 +50,7 @@ A powerful and intelligent Discord bot that verifies user-provided statements us
    ```
    https://discord.com/oauth2/authorize?client_id=1362787732442579004&permissions=1689934340025408&integration_type=0&scope=bot
    ```
-5. Run the application:
+6. Run the application:
    ```bash
    uv run main.py
    ```
